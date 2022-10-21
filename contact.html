@@ -1,0 +1,39 @@
+<html lang="fr">
+<head>
+	<link rel="stylesheet" type="text/css" href="style.css"/>
+	<title>le premier tp</title>
+	<meta charset="UTF-8"/>
+	<meta name="keywords" content="sport, club"/>
+	<meta name="description" content="Page de contact"/>
+</head>
+<body>
+	<h1>Contact</h1>
+	<hr>
+	<h2>Menu</h2>
+	<nav>
+		<a href="page.html">accueil</a>
+		<a href="perso.html">espace abonné</a>
+		<a href="joueurs.html">joueurs</a>
+		<a href="ambiance.html">ambiance matchs</a>
+		<a href="moments.html">moments forts</a>
+		<a href="contact.html">contact</a>
+	</nav>
+	<hr>
+	<form action="enregistrerContact.php" method="POST">
+		<fieldset>
+			<legend>Vous répondre :</legend>
+			<label for="mail">Mail :</label><input type="text" name="mail" required/><br/>
+			<label for="tel">Tel :</label><input type="text" name="tel"/><br/>
+		</fieldset>
+		<fieldset>
+			<label for="name">Nom :</label><input type="text" name="name"/><br/>
+			<label for="name">Prénom :</label><input type="text" name="name"/><br/>
+		</fieldset>
+		<fieldset>
+			<legend>Votre message :</legend>
+			<label for="objet">Objet :</label><input type="text" name="objet"/><br/>
+			<label for="message">Message :</label><textarea rows="5" cols="40" name="message" required></textarea><br/>
+			<input type="submit" value="Envoyer"/>
+		</fieldset>
+	</form>
+</body>
