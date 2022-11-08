@@ -9,14 +9,32 @@
 <body>
 	<h1>Contact</h1>
 	<hr>
-	<h2>Menu</h2>
+	<h2 id="menu">Menu</h2>
 	<nav>
-		<a href="page.html">accueil</a>
-		<a href="perso.html">espace abonné</a>
-		<a href="joueurs.html">joueurs</a>
-		<a href="ambiance.html">ambiance matchs</a>
-		<a href="moments.html">moments forts</a>
-		<a href="contact.html">contact</a>
+		<div>
+			<a href="page.html">accueil</a>
+		</div>
+		<div>
+			<a href="perso.html">espace abonné</a>
+			<ul class="drop_down">
+				<li><a href="#">Connexion</a></li>
+				<li><a href="#">Mes informations</a></li>
+				<li><a href="#">Messagerie</a></li>
+				<li><a href="#">Historique</a></li>
+			</ul>
+		</div>
+		<div>
+			<a href="joueurs.html">joueurs</a>
+		</div>
+		<div>
+			<a href="ambiance.html">ambiance matchs</a>
+		</div>
+		<div>
+			<a href="moments.html">moments forts</a>
+		</div>
+		<div>
+			<a id="current_page" href="contact.html">contact</a>
+		</div>
 	</nav>
 	<hr>
 	<form action="enregistrerContact.php" method="POST">
