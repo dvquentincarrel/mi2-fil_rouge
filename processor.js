@@ -78,14 +78,18 @@ function update_widgets(){
 
 function mod_player(elem){
 	let row_id = elem.parentNode.parentNode.lastChild.innerHTML
-	let row_data = joueurs_data.filter((val, index, arr) => {
-		return val[4] == row_id
+	let counter = 0
+	let row_index = 0
+	joueurs_data.filter((val, index, arr) => {
+		if(row_id == val[4]){
+			row_index = index
+		}
 	})
 	
-	row_data[0] = document.querySelector('#nm').value 
-	row_data[1] = document.querySelector('#photo').value 
-	row_data[2] = document.querySelector('#pst').value 
-	row_data[3] = document.querySelector('#dsc').value
+	joueurs_data[row_index][0] = document.querySelector('#nm').value 
+	joueurs_data[row_index][1] = document.querySelector('#photo').value 
+	joueurs_data[row_index][2] = document.querySelector('#pst').value 
+	joueurs_data[row_index][3] = document.querySelector('#dsc').value
 }
 
 function del_player(elem){
