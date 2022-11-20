@@ -14,10 +14,31 @@ a {
 tr:nth-child(even) {
 	background: lightgray;
 }
+tr:nth-child(odd) {
+	background: white;
+}
 
-table, th, td {
-	border: 1px black solid;
+table{
+	display: flex;
+	flex-wrap: wrap;
+}
+
+table > div {
+	width: 20%;
+	display: flex;
+	flex-direction: column;
+	outline: 1px black solid;
+	border-radius: 15px;
 	border-collapse: collapse;
+}
+
+table > div > * {
+	display: flex;
+	justify-content: center;
+}
+
+table > div > img{
+	margin: auto;
 }
 
 th {
@@ -54,7 +75,7 @@ nav {
 	display: flex;
 	z-index: 500;
 	position: sticky;
-top: 0px;
+	top: 0px;
 }
 
 nav > div { 
@@ -90,4 +111,43 @@ nav div:hover .drop_down {
 	margin: 0;
 	list-style: none;
 	padding-left: 0;
+}
+
+@media screen and (max-width: 900px){
+	/* Wide-ish (tablet ?) */
+	body {
+		background: chartreuse;
+	}
+	nav {
+	flex-wrap: wrap;
+	position: relative; /* Looks horrendous otherwise */
+	}
+	nav > div {
+	flex-basis: 50%;
+	}
+	td img {
+		max-width: 200px;
+	}
+	table > div{
+		width: 50%
+	}
+}
+@media screen and (max-width: 400px){
+	/* Thin-ish (phone ?) */
+	body {
+		background: teal;
+	}
+	nav {
+	flex-wrap: wrap;
+	position: relative; /* Looks horrendous otherwise */
+	}
+	nav > div {
+	flex-basis: 100%;
+	}
+	td img {
+		max-width: 100px;
+	}
+	table > div{
+		width: 100%
+	}
 }

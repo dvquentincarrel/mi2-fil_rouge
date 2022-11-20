@@ -1,8 +1,27 @@
-pages = {
-"ambiance":"<table> <tr> <th>Titre</th> <th></th> <th>Description</th> </tr> <tr> <td>Oui</td> <td><audio controls autoplay muted><source src='yell4yeeha.mp3' type='audio/mp3'> </audio></td> <td>Oui</td> </tr> <tr> <td>Non</td> <td><audio controls> <source src='ENCORE_B.mp3' type='audio/mp3'> </audio></td> <td>Non</td> </tr> <tr> <td>Oun</td> <td><audio controls> <source src='footstepsmarching.mp3' type='audio/mp3'> </audio></td> <td>Oun</td> </tr> <tr> <td>Nui</td> <td><audio controls> <source src='jackie-yea.mp3' type='audio/mp3'> </audio></td> <td>Nui</td> </tr> </table>",
-"contact":"<form action='enregistrerContact.php' method='POST'> <fieldset> <legend>Vous répondre :</legend> <label for='mail'>Mail :</label><input type='text' name='mail' required/><br/> <label for='tel'>Tel :</label><input type='text' name='tel'/><br/> </fieldset> <fieldset> <label for='name'>Nom :</label><input type='text' name='name'/><br/> <label for='name'>Prénom :</label><input type='text' name='name'/><br/> </fieldset> <fieldset> <legend>Votre message :</legend> <label for='objet'>Objet :</label><input type='text' name='objet'/><br/> <label for='message'>Message :</label><textarea rows='5' cols='40' name='message' required></textarea><br/> <input type='submit' value='Envoyer'/> </fieldset> </form>",
-"joueurs":"<table> </table> <label for='nm'>Nom</label> <input type='text' id='nm' name='nm'></input> <label for='photo'>Photo URL</label> <input type='text' id='photo' name='photo'></input> <label for='pst'>Poste</label> <input type='text' id='pst' name='pst'></input> <label for='dsc'>Description</label> <input type='text' id='dsc' name='dsc'></input> <button onclick='new_row()' >Ajouter</button>",
-"moments":"<table> <tr> <th>Titre</th> <th></th> <th>Description</th> </tr> <tr> <td>Oui</td> <td> <video width='350' height='350' controls autoplay muted> <source src='CHEVAL.mp4'> </video> </td> <td>Oui</td> </tr> <tr> <td>Non</td> <td> <video width='350' height='350' controls> <source src='pexels-tima-miroshnichenko-7034351.mp4'> </video> </td> <td>Non</td> </tr> </table>",
-"page":"<section> <blockquote> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna </blockquote> <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Diam quam nulla porttitor massa id neque aliquam. Fusce </p> </section> <hr> <h3>Infos pratiques</h3> <section> <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Diam quam nulla porttitor massa id neque aliquam. Fusce id velit ut tortor. Vivamus at augue eget arcu dictum varius duis. Neque viverra justo nec ultrices dui sapien eget. Turpis egestas integer eget aliquet nibh praesent tristique magna sit. Faucibus ornare suspendisse sed nisi lacus. Volutpat diam ut venenatis </p> </section>",
-"perso":"<ul> <li>Connexions </li> <li>Mes informations <ol> <li>Nom et prénom</li> <li>Numéro de téléphone</li> <li>Email</li> </ol> </li> <li>Messagerie </li> <li>Historique </li> </ul>"
+// Looks awful but hey, it works like a charm
+pages_json = {
+	"ambiance":{
+		"content" :"<table> <tr> <th>Titre</th> <th></th> <th>Description</th> </tr> <tr> <td>Oui</td> <td><audio controls autoplay muted><source src='yell4yeeha.mp3' type='audio/mp3'> </audio></td> <td>Oui</td> </tr> <tr> <td>Non</td> <td><audio controls> <source src='ENCORE_B.mp3' type='audio/mp3'> </audio></td> <td>Non</td> </tr> <tr> <td>Oun</td> <td><audio controls> <source src='footstepsmarching.mp3' type='audio/mp3'> </audio></td> <td>Oun</td> </tr> <tr> <td>Nui</td> <td><audio controls> <source src='jackie-yea.mp3' type='audio/mp3'> </audio></td> <td>Nui</td> </tr> </table>",
+		"callback":""
+	},
+	"contact":{
+		"content":"<form action='enregistrerContact.php' method='POST'> <fieldset> <legend>Vous répondre :</legend> <label for='mail'>Mail :</label><input type='text' name='mail' required/><br/> <label for='tel'>Tel :</label><input type='text' name='tel'/><br/> </fieldset> <fieldset> <label for='name'>Nom :</label><input type='text' name='name'/><br/> <label for='name'>Prénom :</label><input type='text' name='name'/><br/> </fieldset> <fieldset> <legend>Votre message :</legend> <label for='objet'>Objet :</label><input type='text' name='objet'/><br/> <label for='message'>Message :</label><textarea rows='5' cols='40' name='message' required></textarea><br/> <input type='submit' value='Envoyer'/> </fieldset> </form>",
+		"callback":""
+	},
+	"joueurs":{
+		"content":"<table> </table> <label for='nm'>Nom</label> <input type='text' id='nm' name='nm'></input> <label for='photo'>Photo URL</label> <input type='text' id='photo' name='photo'></input> <label for='pst'>Poste</label> <input type='text' id='pst' name='pst'></input> <label for='dsc'>Description</label> <input type='text' id='dsc' name='dsc'></input> <button onclick='add_player_widget(joueurs_data);update_widgets()' >Ajouter</button>",
+		"callback":"make_player_widgets()"
+	},
+	"moments":{
+		"content":"<table> <tr> <th>Titre</th> <th></th> <th>Description</th> </tr> <tr> <td>Oui</td> <td> <video width='350' height='350' controls autoplay muted> <source src='CHEVAL.mp4'> </video> </td> <td>Oui</td> </tr> <tr> <td>Non</td> <td> <video width='350' height='350' controls> <source src='pexels-tima-miroshnichenko-7034351.mp4'> </video> </td> <td>Non</td> </tr> </table>",
+		"callback":""
+	},
+	"page":{
+		"content":"<section> <blockquote> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna </blockquote> <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Diam quam nulla porttitor massa id neque aliquam. Fusce </p> </section> <hr> <h3>Infos pratiques</h3> <section> <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Diam quam nulla porttitor massa id neque aliquam. Fusce id velit ut tortor. Vivamus at augue eget arcu dictum varius duis. Neque viverra justo nec ultrices dui sapien eget. Turpis egestas integer eget aliquet nibh praesent tristique magna sit. Faucibus ornare suspendisse sed nisi lacus. Volutpat diam ut venenatis </p> </section>",
+		"callback":""
+	},
+	"perso":{
+		"content":"<ul> <li>Connexions </li> <li>Mes informations <ol> <li>Nom et prénom</li> <li>Numéro de téléphone</li> <li>Email</li> </ol> </li> <li>Messagerie </li> <li>Historique </li> </ul>",
+		"callback":""
+	}
 }
