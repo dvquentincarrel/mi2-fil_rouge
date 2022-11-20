@@ -109,6 +109,8 @@ function add_player_widget(){
 	new_data.push(pst)
 	let dsc = document.querySelector('#dsc').value 
 	new_data.push(dsc)
+	let id = Math.floor(Math.random()*1000000)
+	new_data.push(id)
 	joueurs_data.push(new_data)
 }
 
