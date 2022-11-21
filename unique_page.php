@@ -1,3 +1,7 @@
+<?php
+$joueurs_json = file_get_contents('joueurs.json');
+echo("<script>joueurs_data = $joueurs_json</script>");
+?>
 <html lang="fr">
 <head>
 	<link rel="stylesheet" type="text/css" href="style.css"/>

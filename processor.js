@@ -74,6 +74,7 @@ function make_player_widgets(){
 function update_widgets(){
 	document.getElementsByTagName('table')[0].innerHTML = ''
 	make_player_widgets()
+	send_json()
 }
 
 function mod_player(elem){
@@ -113,6 +114,16 @@ function add_player_widget(){
 	new_data.push(id)
 	joueurs_data.push(new_data)
 }
+
+function send_json(){
+	fetch('http://localhost:8000/save_data.php', {
+		method: 'POST',
+		headers: {'Content-Type': 'application/json'},
+		body: JSON.stringify(joueurs_data)
+	}).then(ans => {console.log(ans)})
+}
+
+
 
 function inject_page(pages, page, nav_name){
 	// Loads a page content into the current web page
